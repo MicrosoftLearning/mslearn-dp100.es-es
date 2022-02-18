@@ -1,12 +1,12 @@
 ---
 lab:
   title: Usar el diseñador de Azure Machine Learning
-ms.openlocfilehash: d9ebd39449d17d36b9b9e4ad2d2d43c4b866a305
-ms.sourcegitcommit: 18f734eeb1031a9cb69c3b294632efd2e69324ac
+ms.openlocfilehash: 3bfe1bf2e119c295ad3931c569e1f09b41bb2174
+ms.sourcegitcommit: 38540a481d1dfa9bab570777b72e3cf9b6ee6da7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "132832673"
+ms.lasthandoff: 12/16/2021
+ms.locfileid: "135372695"
 ---
 # <a name="use-azure-machine-learning-designer"></a>Usar el diseñador de Azure Machine Learning
 
@@ -66,8 +66,9 @@ Para empezar a trabajar con el diseñador, primero debe crear una canalización 
 2. Cambie el nombre predeterminado de la canalización (**Canalización-creada-el* fecha***) por **Entrenamiento visual de diabetes**. Para ello, haga clic en el nombre predeterminado (o bien, en el icono **&#9881;** situado junto al nombre de la canalización en la parte superior y cámbielo desde allí).
 3. Observe que tendrá que especificar un destino de proceso en el que ejecutar la canalización. En el panel **Configuración**, haga clic en **Seleccionar destino de proceso** y seleccione su clúster de proceso.
 4. En el lado izquierdo del diseñador, expanda la sección **Conjuntos de datos** y arrastre el **conjunto de datos de diabetes** al lienzo.
-5. Seleccione el módulo **conjunto de datos de diabetes** en el lienzo. A continuación, haga clic con el botón derecho en este y, en el menú **Visualizar**, seleccione **Salida del conjunto de datos**.
-6. Revise el esquema de los datos y observe que puede ver las distribuciones de las distintas columnas como histogramas. A continuación, cierre la visualización.
+5. Seleccione el módulo **conjunto de datos de diabetes** en el lienzo. A continuación, haga clic con el botón derecho en él y elija **Vista previa de los datos**.
+6. En el panel DatasetOutput, seleccione la pestaña **Perfil**.
+7. Revise el esquema de los datos y observe que puede ver las distribuciones de las distintas columnas como histogramas. A continuación, cierre la visualización.
 
 ## <a name="add-transformations"></a>Agregar transformaciones
 
@@ -116,7 +117,7 @@ Con los pasos del flujo de datos definidos, ya está listo para ejecutar la cana
     >
     > Mientras se ejecuta, puede ver la canalización y el experimento que se han creado en las páginas **Canalizaciones** y **Experimentos**. Vuelva a la canalización **Entrenamiento visual de Diabetes** en la página **Diseñador** cuando haya terminado.
 
-3. Una vez completado el módulo **Normalizar datos**, selecciónelo y, en el panel **Configuración**, pestaña **Salidas y registros**, debajo de **Salidas de datos**, en la sección **Conjunto de datos transformado**, haga clic en el icono **Visualizar** y observe que puede ver las estadísticas y las visualizaciones de distribución de las columnas transformadas.
+3. Una vez completado el módulo **Normalizar datos**, selecciónelo y, en el panel **Configuración**, en la pestaña **Salidas y registros**, debajo de **Salidas de datos**, en la sección **Conjunto de datos transformado**, haga clic en el icono **Vista previa de os datos** y observe que puede ver las estadísticas y las visualizaciones de distribución de las columnas transformadas.
 4. Cierre las visualizaciones del módulo **Normalizar datos** y espere a que se completen el resto de los módulos. Visualice la salida del módulo **Evaluar modelo** para ver las métricas de rendimiento del modelo.
 
     **Nota**: El rendimiento de este modelo no es perfecto, en parte porque solo se han realizado tareas mínimas de ingeniería de características y procesamiento previo. Puede probar algunos algoritmos de clasificación diferentes y comparar los resultados (puede conectar las salidas del módulo **Dividir datos** a varios módulos **Entrenar modelo** y **Puntuar modelo** y también puede conectar un segundo modelo puntuado al módulo **Evaluar modelo** para ver una comparación en paralelo). El objetivo del ejercicio es simplemente presentarle la interfaz del diseñador, no entrenar un modelo perfecto.

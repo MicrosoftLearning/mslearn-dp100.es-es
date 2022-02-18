@@ -1,12 +1,12 @@
 ---
 lab:
   title: Uso del aprendizaje automático automatizado
-ms.openlocfilehash: 6344e74d7177b4a90c57ac91916c61c78c251452
-ms.sourcegitcommit: 18f734eeb1031a9cb69c3b294632efd2e69324ac
+ms.openlocfilehash: 25312648c7957dfd958098bc74faac249382eec8
+ms.sourcegitcommit: 48c912e43571d4bddcc70260e4dc85ebbc040b27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "132832687"
+ms.lasthandoff: 11/30/2021
+ms.locfileid: "133289668"
 ---
 # <a name="use-automated-machine-learning"></a>Uso del aprendizaje automático automatizado
 
@@ -79,18 +79,23 @@ En Azure Machine Learning, las operaciones que se ejecutan se denominan *experim
     - **Configuración de la ejecución**:
         - **Nuevo nombre del experimento**: mslearn-automl-diabetes
         - **Columna de destino**: Diabético/a (*esta es la etiqueta que tendrá que predecir el modelo entrenado)* .
-        - **Seleccionar clúster de proceso**: *el clúster de proceso que creó anteriormente*
+        - **Select compute type** (Seleccionar tipo de proceso): el clúster de proceso.
+        - **Select Azure ML compute cluster** (Seleccionar el clúster de proceso de Azure ML): *el clúster de proceso que creó anteriormente.*
     - **Tipo de tarea y configuración**:
         - **Tipo de tarea**: clasificación
-        - **Opciones de configuración adicionales**:
+        - Seleccione **(Ver opciones de configuración adicionales)** (Ver opciones de configuración adicionales) para abrir **Configuraciones adicionales**:
             - **Métrica principal**: seleccione **AUC_Weighted** *(encontrará más información sobre esta métrica más adelante).*
             - **Explicación del mejor modelo**: seleccionada: *esta opción hace que el aprendizaje automático automatizado calcule la importancia de la característica para el mejor modelo, permitiendo determinar la influencia de cada característica en la etiqueta de predicción*.
             - **Algoritmos bloqueados**: deje la configuración predeterminada (*todos los algoritmos se pueden usar durante el entrenamiento*)
             - **Criterio de salida**:
                 - **Training job time (hours)** (Tiempo del trabajo de entrenamiento [horas]): 0,5: *esto hace que el experimento finalice después de un máximo de 30 minutos.*
                 - **Umbral de puntuación de métrica**: 0,90 (*provoca que el experimento finalice si un modelo alcanza una métrica de AUC ponderada del 90 % o superior*).
-        - **Configuración de caracterización**:
+        - Seleccione **View featurization settings** (Ver configuración de caracterización) para abrir **Caracterización**:
             - **Habilitar caracterización**: seleccionado: *hace que Azure Machine Learning preprocese automáticamente las características antes del entrenamiento*.
+    - **Seleccione el tipo de validación y prueba**:
+        - **Tipo de validación**: división entre entrenamiento y validación.
+        - **Percentage validation of data** (Validación de porcentaje de datos): 30
+        - **Test dataset** (Conjunto de datos de prueba): no se requiere ningún conjunto de datos de prueba.
 
 3. Cuando termine de enviar los detalles de la ejecución de ML automatizado, se iniciará automáticamente. Puede observar el estado de la ejecución en el panel **Propiedades**.
 4. Cuando el estado de ejecución cambia a *En ejecución*, vea la pestaña **Modelos** y observe que se prueba cada combinación posible de algoritmos de entrenamiento y pasos de preprocesamiento y se evalúa el rendimiento del modelo resultante. La página se actualizará frecuentemente de forma automática, pero también puede seleccionar **&#8635; Actualizar**. Los modelos pueden tardar unos 10 minutos en empezar a aparecer, ya que los nodos de clúster se deben inicializar y se debe completar el proceso de caracterización de datos para poder comenzar el entrenamiento. Ahora podría ser un buen momento para hacer una pausa.
@@ -115,11 +120,12 @@ Después de usar el aprendizaje automático automatizado a fin de entrenar algun
 > **Nota**: En Azure Machine Learning, puede implementar un servicio como una instancia de Azure Container Instances (ACI) o en un clúster de Azure Kubernetes Service (AKS). En escenarios de producción, se recomienda una implementación de AKS, para lo cual debe crear un destino de proceso de *clúster de inferencia*. En este ejercicio usará un servicio ACI, que es un destino de implementación adecuado para las pruebas y no requiere la creación de un clúster de inferencia.
 
 1. Seleccione la pestaña **Detalles** de la ejecución que produjo el mejor modelo.
-2. Use el botón **Implementar** para implementar el modelo con la configuración siguiente:
+2. En la opción **Implementar**, use el botón **Deploy to web service** (Implementar en el servicio web) para implementar el modelo con la siguiente configuración:
     - **Nombre**: auto-predict-diabetes
     - **Descripción**: predicción de la diabetes
-    - **Tipo de proceso**: ACI
+    - **Tipo de proceso**: instancia de Azure Container.
     - **Habilitar autenticación**: seleccionado
+    - **Use custom deployment assets** (Usar recursos de implementación personalizados): no seleccionado.
 3. Espere a que se inicie la implementación; esto puede tardar unos segundos. A continuación, en la pestaña **Modelo**, en la sección **Resumen de modelo**, observe el valor de **Estado de la implementación** para el servicio **auto-predict-diabetes**, que debería ser **En ejecución**. Espere a que este estado cambie a **Correcto**. Es posible que tenga que seleccionar **&#8635; Actualizar** frecuentemente.  **NOTA** La operación puede tardar un poco, espere.
 4. En Azure Machine Learning Studio, vea la página **Puntos de conexión** y seleccione el punto de conexión en tiempo real **auto-predict-rentals**. Luego, seleccione la pestaña **Consumir** y tenga en cuenta la información siguiente. La necesitará para conectarse al servicio implementado desde una aplicación cliente.
     - El punto de conexión REST para el servicio
