@@ -1,12 +1,12 @@
 ---
 lab:
   title: Creación de un área de trabajo de Azure Machine Learning
-ms.openlocfilehash: a0deba33c56b152f6e0ac1f95cdaae2886574bb6
-ms.sourcegitcommit: 18f734eeb1031a9cb69c3b294632efd2e69324ac
+ms.openlocfilehash: 03b79f321ac3b5f7a5b9a03a3760db5649898eed
+ms.sourcegitcommit: 66d8872bc3d24c2121e225be132b56f4df7920ac
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "132832679"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "138597271"
 ---
 # <a name="create-and-explore-an-azure-machine-learning-workspace"></a>Creación y exploración de un área de trabajo de Azure Machine Learning
 
@@ -65,8 +65,7 @@ Una de las ventajas de Azure Machine Learning es la capacidad de crear un proces
         - **Enable virtual network** (Habilitar red virtual): no seleccionada *(normalmente se usaría en un entorno empresarial para mejorar la seguridad de red).*
         - **Asignar a otro usuario**: no seleccionada *(puede usarla para asignar una instancia de proceso a un científico de datos).* 3. Espere a que se inicie la instancia de proceso y su estado cambie a **En ejecución**.
 
-> [!NOTE]
-> Las instancias de proceso y los clústeres se basan en imágenes de máquina virtual de Azure estándar. Para este ejercicio, se recomienda la imagen *Standard_DS11_v2* para lograr el equilibrio óptimo entre el costo y el rendimiento. Si la suscripción tiene una cuota que no incluye esta imagen, elija una imagen alternativa, pero tenga en cuenta que una imagen más grande puede incurrir en un costo mayor y una imagen más pequeña puede no ser suficiente para completar las tareas. Como alternativa, pida al administrador de Azure que amplíe la cuota.
+> **Nota**: Las instancias de proceso y los clústeres se basan en imágenes de máquina virtual de Azure estándar. Para este ejercicio, se recomienda la imagen *Standard_DS11_v2* para lograr el equilibrio óptimo entre el costo y el rendimiento. Si la suscripción tiene una cuota que no incluye esta imagen, elija una imagen alternativa, pero tenga en cuenta que una imagen más grande puede incurrir en un costo mayor y una imagen más pequeña puede no ser suficiente para completar las tareas. Como alternativa, pida al administrador de Azure que amplíe la cuota.
 
 ## <a name="clone-and-run-a-notebook"></a>Clonación y ejecución de un cuaderno
 
@@ -85,7 +84,11 @@ Al ejecutar código en *cuadernos* se realiza una gran cantidad de experimentaci
 5. Cierre el panel del terminal y finalice la sesión.
 6. En la carpeta **/users/*su-nombre-de-usuario*/mslearn-dp100**, abra el cuaderno **Introducción a Notebooks**. A continuación, lea las notas y siga las instrucciones que contiene.
 
-> **Sugerencia**: Para ejecutar una celda de código, seleccione la celda que desea ejecutar y, a continuación, use el botón **&#9655;** para ejecutarla.
+> **Sugerencia**: Para ejecutar una celda de código, seleccione la celda que desea ejecutar y, a continuación, use el botón **&#9655;** para ejecutarla. 
+
+> **¿Es la primera vez que usa Python?** Use la [hoja de referencia rápida de Python](cheat-sheets/dp100-cheat-sheet-python.pdf) para entender el código.
+
+> **¿Es la primera vez que trabaja con aprendizaje automático?** En la [introducción al aprendizaje automático](cheat-sheets/dp100-cheat-sheet-machine-learning.pdf) obtendrá información sobre el proceso de aprendizaje automático en Azure Machine Learning.
 
 ## <a name="stop-your-compute-instance"></a>Detención de la instancia de proceso
 

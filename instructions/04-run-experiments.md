@@ -1,12 +1,12 @@
 ---
 lab:
   title: Ejecución de los experimentos
-ms.openlocfilehash: 875b204cd18963c53ff0b7d2ee2334ebc22c17e6
-ms.sourcegitcommit: 18f734eeb1031a9cb69c3b294632efd2e69324ac
+ms.openlocfilehash: 62b6b79c99142d4311c2d9c0db4b02cfd710feb6
+ms.sourcegitcommit: 66d8872bc3d24c2121e225be132b56f4df7920ac
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "132832672"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "138597277"
 ---
 # <a name="run-experiments"></a>Ejecución de los experimentos
 
@@ -24,6 +24,8 @@ Aunque puede usar la página **Cuadernos** de Azure Machine Learning Studio para
 
 1. En [Azure Machine Learning Studio](https://ml.azure.com), consulte la página **Proceso** del área de trabajo y, en la pestaña **Instancias de proceso**, inicie la instancia de proceso si aún no se está ejecutando.
 2. Cuando se esté ejecutando la instancia de proceso, haga clic en el vinculo de **Jupyter** para abrir la página principal de Jupyter en una nueva pestaña del explorador. Asegúrese de abrir *Jupyter* y no *JupyterLab*.
+
+> **Sugerencia**: ¿Es la primera vez que usa Python? Use la [hoja de referencia rápida de Python](cheat-sheets/dp100-cheat-sheet-python.pdf) para entender el código.
 
 ## <a name="verify-the-azure-machine-learning-sdk-is-installed"></a>Comprobar que el SDK de Azure Machine Learning está instalado
 

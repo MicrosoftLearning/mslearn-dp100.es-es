@@ -1,12 +1,12 @@
 ---
 lab:
   title: Entrenamiento de modelos
-ms.openlocfilehash: 1a999d123778609e47360e51872a4fe201bee5ae
-ms.sourcegitcommit: 18f734eeb1031a9cb69c3b294632efd2e69324ac
+ms.openlocfilehash: dffa9edda34c599dfbd372fe898ddcf955f6f200
+ms.sourcegitcommit: 66d8872bc3d24c2121e225be132b56f4df7920ac
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "132832658"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "138597265"
 ---
 # <a name="train-models"></a>Entrenar modelos
 
@@ -22,6 +22,8 @@ Aunque puede usar la página **Cuadernos** de Azure Machine Learning Studio para
 
 1. En [Azure Machine Learning Studio](https://ml.azure.com), consulte la página **Proceso** del área de trabajo y, en la pestaña **Instancias de proceso**, inicie la instancia de proceso si aún no se está ejecutando.
 2. Cuando se esté ejecutando la instancia de proceso, haga clic en el vinculo de **Jupyter** para abrir la página principal de Jupyter en una nueva pestaña del explorador.
+
+> **Sugerencia**: ¿Es la primera vez que usa Python? Use la [hoja de referencia rápida de Python](cheat-sheets/dp100-cheat-sheet-python.pdf) para entender el código. ¿Es la primera vez que trabaja con aprendizaje automático? En la [introducción al aprendizaje automático](cheat-sheets/dp100-cheat-sheet-machine-learning.pdf) obtendrá información sobre el proceso de aprendizaje automático en Azure Machine Learning.
 
 ## <a name="train-models-using-the-azure-machine-learning-sdk"></a>Entrenar modelos con el SDK de Azure Machine Learning
 
