@@ -1,12 +1,12 @@
 ---
 lab:
   title: Uso del aprendizaje automático automatizado
-ms.openlocfilehash: 25312648c7957dfd958098bc74faac249382eec8
-ms.sourcegitcommit: 48c912e43571d4bddcc70260e4dc85ebbc040b27
+ms.openlocfilehash: 9836a169752705779f263e7b005baf11e2f7b616
+ms.sourcegitcommit: 8601551af6c32a4c75fd9ecffce750583c2ab4b8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2021
-ms.locfileid: "133289668"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "141346688"
 ---
 # <a name="use-automated-machine-learning"></a>Uso del aprendizaje automático automatizado
 
@@ -28,7 +28,7 @@ Para usar el aprendizaje automático automatizado, necesita un proceso en el que
 2. En Azure Machine Learning Studio, consulte la página **Proceso** y, en la pestaña **Instancias de proceso**, inicie la instancia de proceso si aún no se está ejecutando. Usará esta instancia de proceso para probar el modelo entrenado.
 3. Mientras se inicia la instancia de proceso, cambie a la pestaña **Clústeres de proceso** y agregue un nuevo clúster de proceso con la configuración siguiente. Ejecutará el experimento de aprendizaje automático automatizado en este clúster para aprovechar la capacidad de distribuir las ejecuciones de entrenamiento en varios nodos de proceso:
     - **Ubicación**: *la misma que la del área de trabajo*
-    - **Prioridad de la máquina virtual**: dedicada
+    - **Nivel de máquina virtual**: dedicado
     - **Tipo de máquina virtual**: CPU
     - **Tamaño de la máquina virtual**: Standard_DS11_v2
     - **Nombre del proceso**: *escriba un nombre único*
@@ -86,7 +86,8 @@ En Azure Machine Learning, las operaciones que se ejecutan se denominan *experim
         - Seleccione **(Ver opciones de configuración adicionales)** (Ver opciones de configuración adicionales) para abrir **Configuraciones adicionales**:
             - **Métrica principal**: seleccione **AUC_Weighted** *(encontrará más información sobre esta métrica más adelante).*
             - **Explicación del mejor modelo**: seleccionada: *esta opción hace que el aprendizaje automático automatizado calcule la importancia de la característica para el mejor modelo, permitiendo determinar la influencia de cada característica en la etiqueta de predicción*.
-            - **Algoritmos bloqueados**: deje la configuración predeterminada (*todos los algoritmos se pueden usar durante el entrenamiento*)
+            - **Usar todos los modelos admitidos**: <u>no </u>seleccionado: restringiremos el experimento para probar algunos algoritmos específicos.
+            - **Modelos permitidos**: seleccione únicamente **LogisticRegression** and **RandomForest**. Estos son los únicos algoritmos que se probarán en el experimento.
             - **Criterio de salida**:
                 - **Training job time (hours)** (Tiempo del trabajo de entrenamiento [horas]): 0,5: *esto hace que el experimento finalice después de un máximo de 30 minutos.*
                 - **Umbral de puntuación de métrica**: 0,90 (*provoca que el experimento finalice si un modelo alcanza una métrica de AUC ponderada del 90 % o superior*).

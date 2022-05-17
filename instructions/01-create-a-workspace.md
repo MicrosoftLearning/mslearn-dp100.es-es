@@ -1,12 +1,12 @@
 ---
 lab:
   title: Creación de un área de trabajo de Azure Machine Learning
-ms.openlocfilehash: 03b79f321ac3b5f7a5b9a03a3760db5649898eed
-ms.sourcegitcommit: 66d8872bc3d24c2121e225be132b56f4df7920ac
+ms.openlocfilehash: c2f33973281221da1a4871f19fbaff8f127d028f
+ms.sourcegitcommit: 8601551af6c32a4c75fd9ecffce750583c2ab4b8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2022
-ms.locfileid: "138597271"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "141346682"
 ---
 # <a name="create-and-explore-an-azure-machine-learning-workspace"></a>Creación y exploración de un área de trabajo de Azure Machine Learning
 
@@ -80,7 +80,7 @@ Al ejecutar código en *cuadernos* se realiza una gran cantidad de experimentaci
     git clone https://github.com/MicrosoftLearning/mslearn-dp100 mslearn-dp100
     ```
 
-4. Una vez completado el comando, en el panel **Mis archivos**, haga clic en **&#8635;** para actualizar la vista y compruebe que se ha creado la carpeta **/users/*su-nombre-de-usuario*/mslearn-dp100**. Esta carpeta contiene varios archivos de cuaderno **.ipynb**.
+4. Una vez completado el comando, en el panel **Archivos**, haga clic en **&#8635;** para actualizar la vista y compruebe que se ha creado la carpeta **/users/*su-nombre-de-usuario*/mslearn-dp100**. Esta carpeta contiene varios archivos de cuaderno **.ipynb**.
 5. Cierre el panel del terminal y finalice la sesión.
 6. En la carpeta **/users/*su-nombre-de-usuario*/mslearn-dp100**, abra el cuaderno **Introducción a Notebooks**. A continuación, lea las notas y siga las instrucciones que contiene.
 
