@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: b6d8b3d714baf40245d668ffbd070f62861763ea
-ms.sourcegitcommit: 18f734eeb1031a9cb69c3b294632efd2e69324ac
+ms.openlocfilehash: b4c97f711e7133c719af152638d82207d753d276
+ms.sourcegitcommit: 04eb45ad8982056648f0e834e9a272a9022023dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "137894585"
+ms.lasthandoff: 05/22/2022
+ms.locfileid: "145192786"
 ---
 # <a name="azure-machine-learning-lab-exercises"></a>Ejercicios de laboratorio de Azure Machine Learning
 
 Este repositorio contiene los ejercicios de laboratorio práctico del curso de Microsoft [DP-100 *Diseño e implementación de una solución de ciencia de datos en Azure*](https://docs.microsoft.com/learn/certifications/courses/dp-100t01) y los [módulos autodirigidos equivalentes en Microsoft Learn](https://docs.microsoft.com/learn/paths/build-ai-solutions-with-azure-ml-service/). Los laboratorios están pensados para complementar los materiales de aprendizaje y permiten practicar el uso de las tecnologías descritas en estos materiales.
 
-Puede ver las instrucciones de los ejercicios de laboratorio en **[https://aka.ms/mslearn-dp100](https://aka.ms/mslearn-dp100)** .
+Al usar estos laboratorios en un curso dirigido por instrucciones, los alumnos deben usar la suscripción de Azure proporcionada para el curso.
 
 ## <a name="what-are-we-doing"></a>¿Qué vamos a hacer?
 
