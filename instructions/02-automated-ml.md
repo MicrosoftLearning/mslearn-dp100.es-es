@@ -1,12 +1,12 @@
 ---
 lab:
   title: Uso del aprendizaje automático automatizado
-ms.openlocfilehash: 9836a169752705779f263e7b005baf11e2f7b616
-ms.sourcegitcommit: 8601551af6c32a4c75fd9ecffce750583c2ab4b8
+ms.openlocfilehash: 70580a25d4bcd3929697874650ea6865262871f4
+ms.sourcegitcommit: d2354e40eec31c22eb09381c6a890311cccc30c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/01/2022
-ms.locfileid: "141346688"
+ms.lasthandoff: 06/11/2022
+ms.locfileid: "146266843"
 ---
 # <a name="use-automated-machine-learning"></a>Uso del aprendizaje automático automatizado
 
@@ -84,9 +84,9 @@ En Azure Machine Learning, las operaciones que se ejecutan se denominan *experim
     - **Tipo de tarea y configuración**:
         - **Tipo de tarea**: clasificación
         - Seleccione **(Ver opciones de configuración adicionales)** (Ver opciones de configuración adicionales) para abrir **Configuraciones adicionales**:
-            - **Métrica principal**: seleccione **AUC_Weighted** *(encontrará más información sobre esta métrica más adelante).*
+            - **Métrica primaria**: seleccione **AUC ponderado** *(encontrará más información sobre esta métrica más adelante).*
             - **Explicación del mejor modelo**: seleccionada: *esta opción hace que el aprendizaje automático automatizado calcule la importancia de la característica para el mejor modelo, permitiendo determinar la influencia de cada característica en la etiqueta de predicción*.
-            - **Usar todos los modelos admitidos**: <u>no </u>seleccionado: restringiremos el experimento para probar algunos algoritmos específicos.
+            - **Usar todos los modelos admitidos**: <u>no</u>seleccionado: restringiremos el experimento para probar algunos algoritmos específicos.
             - **Modelos permitidos**: seleccione únicamente **LogisticRegression** and **RandomForest**. Estos son los únicos algoritmos que se probarán en el experimento.
             - **Criterio de salida**:
                 - **Training job time (hours)** (Tiempo del trabajo de entrenamiento [horas]): 0,5: *esto hace que el experimento finalice después de un máximo de 30 minutos.*
@@ -106,7 +106,7 @@ En Azure Machine Learning, las operaciones que se ejecutan se denominan *experim
 
 Una vez finalizado el experimento, puede revisar el modelo de mejor rendimiento que se haya generado (tenga en cuenta que, en este caso, hemos usado los criterios de salida para detener el experimento, por lo que el "mejor" modelo que encuentra el experimento puede no ser el mejor modelo posible, sino el mejor encontrado en el tiempo y con las restricciones de métricas que se permiten para este ejercicio).
 
-1. En la pestaña **Detalles** de la ejecución del ML automatizado, tenga en cuenta el resumen del mejor modelo.
+1. En la pestaña **Introducción** de la ejecución del aprendizaje automático automatizado, tenga en cuenta el resumen del mejor modelo.
 2. Seleccione el **Nombre del algoritmo** para el mejor modelo a fin de ver la ejecución secundaria que lo ha producido.
 
     El mejor modelo se identifica en función de la métrica de evaluación que ha especificado (*AUC_Weighted*). Para calcular esta métrica, el proceso de entrenamiento ha usado algunos de los datos a fin de entrenar el modelo y ha aplicado una técnica llamada *validación cruzada* con el fin de probar de forma iterativa el modelo entrenado con datos con los que no se ha entrenado y comparar el valor previsto con el valor conocido real. A partir de estas comparaciones, se tabula una *matriz de confusión* de verdaderos positivos, falsos positivos, verdaderos negativos y falsos negativos y se calculan métricas de clasificación adicionales, incluido un gráfico de curva de operador receptor (ROC) que compara la tasa de Verdadero positivo y la tasa de Falso positivo. El área bajo esta curva (AUC) es una métrica común que se usa para evaluar el rendimiento de la clasificación.
@@ -120,7 +120,7 @@ Después de usar el aprendizaje automático automatizado a fin de entrenar algun
 
 > **Nota**: En Azure Machine Learning, puede implementar un servicio como una instancia de Azure Container Instances (ACI) o en un clúster de Azure Kubernetes Service (AKS). En escenarios de producción, se recomienda una implementación de AKS, para lo cual debe crear un destino de proceso de *clúster de inferencia*. En este ejercicio usará un servicio ACI, que es un destino de implementación adecuado para las pruebas y no requiere la creación de un clúster de inferencia.
 
-1. Seleccione la pestaña **Detalles** de la ejecución que produjo el mejor modelo.
+1. Seleccione la pestaña **Introducción** de la ejecución que produjo el mejor modelo.
 2. En la opción **Implementar**, use el botón **Deploy to web service** (Implementar en el servicio web) para implementar el modelo con la siguiente configuración:
     - **Nombre**: auto-predict-diabetes
     - **Descripción**: predicción de la diabetes
