@@ -1,12 +1,12 @@
 ---
 lab:
   title: Usar el diseñador de Azure Machine Learning
-ms.openlocfilehash: 55911fdc4ea7e3a2b48ab0d0a583a0a24121ffca
-ms.sourcegitcommit: d2354e40eec31c22eb09381c6a890311cccc30c9
+ms.openlocfilehash: ce03f54e5762e66363608b88fd86ec1de5795a33
+ms.sourcegitcommit: 48bc4227570b0817702d195aa06fa4dabe1bbdd7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2022
-ms.locfileid: "146266852"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "146733080"
 ---
 # <a name="use-azure-machine-learning-designer"></a>Usar el diseñador de Azure Machine Learning
 
@@ -37,7 +37,7 @@ Para usar el diseñador de Azure Machine Learning, necesita un proceso en el que
 
 Ahora que tiene algunos recursos de proceso que puede usar para ejecutar una canalización de entrenamiento, necesitará algunos datos para entrenar el modelo.
 
-1. En Azure Machine Learning Studio, vea la página **Conjuntos de datos**. Los conjuntos de datos representan archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning.
+1. En Estudio de Azure Machine Learning, vea la página **Datos**. Los conjuntos de datos representan archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning.
 2. Si ha creado previamente el **conjunto de datos de diabetes**, ábralo. De lo contrario, cree un conjunto de datos a partir de archivos web con los valores siguientes y ábralo a continuación:
     * **Información básica**:
         * **Dirección URL web**: https://aka.ms/diabetes-data
@@ -64,10 +64,10 @@ Para empezar a trabajar con el diseñador, primero debe crear una canalización 
 
 1. En Azure Machine Learning Studio, vea la página **Diseñador** y cree una canalización.
 2. Cambie el nombre de canalización predeterminado (**Pipeline-Created-on-* date***) a **Entrenamiento visual de Diabetes** haciendo clic en el icono **&#9881;** de la derecha para abrir el panel **Configuración**.
-3. Observe que tendrá que especificar un destino de proceso en el que ejecutar la canalización. En el panel **Configuración**, haga clic en **Seleccionar destino de proceso** y seleccione su clúster de proceso.
+3. Observe que tendrá que especificar un destino de proceso en el que ejecutar la canalización. En el panel **Configuración**, haga clic en **Seleccionar tipo de proceso** y elija "Clúster de proceso"; luego, haga clic en "Seleccionar clúster de proceso de Azure ML" y elija el clúster de equipos. Después, cierre el panel "Configuración".
 4. En el lado izquierdo del diseñador, seleccione la pestaña **Datos** y arrastre el **conjunto de datos de diabetes** al lienzo.
 5. Seleccione el componente **conjunto de datos de diabetes** en el lienzo. A continuación, haga clic con el botón derecho en él y elija **Vista previa de los datos**.
-6. En el panel DatasetOutput, seleccione la pestaña **Perfil**.
+6. En el panel DataOutput, seleccione la pestaña **Perfil**.
 7. Revise el esquema de los datos y observe que puede ver las distribuciones de las distintas columnas como histogramas. A continuación, cierre la visualización.
 
 ## <a name="add-transformations"></a>Agregar transformaciones
@@ -126,10 +126,11 @@ Con los pasos del flujo de datos definidos, ya está listo para ejecutar la cana
 
 Ahora que ha usado una *canalización de entrenamiento* para entrenar un modelo, puede crear una *canalización de inferencia* que use el modelo entrenado para predecir etiquetas para nuevos datos.
 
-1. En la lista desplegable **Crear canalización de inferencia**, haga clic en **Canalización de inferencia en tiempo real**. Después de unos segundos, se abrirá una versión nueva de la canalización denominada **Entrenamiento visual de diabetes-inferencia en tiempo real**.
-2. Cambie el nombre de la nueva canalización a **Predict Diabetes** y después revísela. Observe que la transformación de normalización y el modelo entrenado se han encapsulado en esta canalización para que las estadísticas de los datos de entrenamiento se usen en la normalización de los nuevos valores de datos. El modelo entrenado se usará para puntuar los nuevos datos.
-3. Observe que la canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el **conjunto de datos de diabetes** de la canalización de entrenamiento. Pero estos datos de entrada incluyen la etiqueta **Diabetic** que predice el modelo, lo que no resulta intuitivo para incluir en los nuevos datos de pacientes para los que todavía no se ha realizado una predicción de la diabetes.
-4. Elimine el **conjunto de datos de diabetes** de la canalización de inferencia y reemplácelo por un componente **Introducción manual de datos**. Para ello, conéctelo a la misma entrada del **conjunto de datos** del componente **Aplicar transformación** que **Entrada del servicio web**. A continuación, modifique la configuración del componente **Introducción manual de datos** para usar la siguiente entrada CSV, que contiene valores de características sin etiquetas para tres nuevas observaciones de los pacientes:
+1. En la pestaña **Trabajos**, vaya a la canalización completada. 
+2. Seleccione **Crear canalización de inferencia** y haga clic en **Canalización de inferencia en tiempo real**. Después de unos segundos, se abrirá una versión nueva de la canalización denominada **Entrenamiento visual de diabetes-inferencia en tiempo real**.
+3. Cambie el nombre de la nueva canalización a **Predict Diabetes** y después revísela. Observe que la transformación de normalización y el modelo entrenado se han encapsulado en esta canalización para que las estadísticas de los datos de entrenamiento se usen en la normalización de los nuevos valores de datos. El modelo entrenado se usará para puntuar los nuevos datos.
+4. Observe que la canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el **conjunto de datos de diabetes** de la canalización de entrenamiento. Pero estos datos de entrada incluyen la etiqueta **Diabetic** que predice el modelo, lo que no resulta intuitivo para incluir en los nuevos datos de pacientes para los que todavía no se ha realizado una predicción de la diabetes.
+5. Elimine el **conjunto de datos de diabetes** de la canalización de inferencia y reemplácelo por un componente **Introducción manual de datos**. Para ello, conéctelo a la misma entrada del **conjunto de datos** del componente **Aplicar transformación** que **Entrada del servicio web**. A continuación, modifique la configuración del componente **Introducción manual de datos** para usar la siguiente entrada CSV, que contiene valores de características sin etiquetas para tres nuevas observaciones de los pacientes:
 
 ```CSV
 PatientID,Pregnancies,PlasmaGlucose,DiastolicBloodPressure,TricepsThickness,SerumInsulin,BMI,DiabetesPedigree,Age

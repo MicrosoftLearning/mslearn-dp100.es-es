@@ -1,12 +1,12 @@
 ---
 lab:
   title: Uso del aprendizaje automático automatizado
-ms.openlocfilehash: 70580a25d4bcd3929697874650ea6865262871f4
-ms.sourcegitcommit: d2354e40eec31c22eb09381c6a890311cccc30c9
+ms.openlocfilehash: a4908c0de74edb6c2fdf7b1a7288014d1ab86b94
+ms.sourcegitcommit: 48bc4227570b0817702d195aa06fa4dabe1bbdd7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2022
-ms.locfileid: "146266843"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "146733071"
 ---
 # <a name="use-automated-machine-learning"></a>Uso del aprendizaje automático automatizado
 
@@ -42,7 +42,7 @@ Para usar el aprendizaje automático automatizado, necesita un proceso en el que
 Ahora que tiene algunos recursos de proceso que puede usar para procesar datos, necesitará una manera de almacenar e ingerir los datos que se van a procesar.
 
 1. Vea los datos separados por comas en https://aka.ms/diabetes-data, en el explorador web. A continuación, guárdelos como un archivo local denominado **diabetes.csv** (no importa dónde lo guarde).
-2. En Azure Machine Learning Studio, vea la página **Conjuntos de datos**. Los conjuntos de datos representan archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning.
+2. En Estudio de Azure Machine Learning, vea la página **Datos**. Los conjuntos de datos representan archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning.
 3. Cree un conjunto de datos a partir de archivos locales con los valores siguientes:
     * **Información básica**:
         * **Nombre**: conjunto de datos de diabetes
